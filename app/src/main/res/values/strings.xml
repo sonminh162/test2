@@ -35,4 +35,7 @@ Welcome back.</string>
     <string name="next_activity">Back</string>
     <string name="enter_password">enter password</string>
     <string name="example_gmail_com">example@gmail.com</string>
+    <string name="enter_email_2">enter email</string>
+    <string name="enter_name_3">enter name</string>
+    <string name="enter_email_3">enter email</string>
 </resources>

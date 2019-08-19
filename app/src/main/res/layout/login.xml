@@ -82,6 +82,8 @@
         app:layout_constraintTop_toBottomOf="@id/email_address" />
 
     <EditText
+        android:letterSpacing="0.2"
+        android:hint="@string/enter_email_2"
         android:id="@+id/email_address_value_sign_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -183,7 +185,7 @@
         app:layout_constraintTop_toBottomOf="@id/button_sign_in" />
 
     <TextView
-        android:textColor="@color/Cerise"
+        android:textColor="@color/cerise"
         android:id="@+id/sign_up_text_clickable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

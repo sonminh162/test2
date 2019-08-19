@@ -93,6 +93,7 @@
         app:layout_constraintTop_toBottomOf="@id/full_name_tv" />
 
     <EditText
+        android:hint="@string/enter_name_3"
         android:letterSpacing="0.2"
         android:id="@+id/full_name_value"
         android:layout_width="wrap_content"
@@ -137,6 +138,7 @@
         app:layout_constraintTop_toBottomOf="@id/email_address_am2" />
 
     <EditText
+        android:hint="@string/enter_email_3"
         android:letterSpacing="0.2"
         android:id="@+id/email_address_value_sign_in"
         android:layout_width="wrap_content"
@@ -229,7 +231,7 @@
         app:layout_constraintTop_toBottomOf="@id/button_sign_up" />
 
     <TextView
-        android:textColor="@color/Cerise"
+        android:textColor="@color/cerise"
         android:id="@+id/sign_in_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
