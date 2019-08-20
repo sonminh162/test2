@@ -30,14 +30,20 @@ public class RegisterActivity extends AppCompatActivity {
         password = findViewById(R.id.password_value_am2);
         emailAddress = findViewById(R.id.email_address_value_sign_in);
 
-//        final String emailAddressForIntent = emailAddress.getText().toString();
-//        final String passwordForIntent = password.getText().toString();
+        signIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (validateSimple()) {
-                    saveDataToIntent(emailAddress.getText().toString(), password.getText().toString(), LoginActivity.RESULT);
+                    saveDataToIntent(emailAddress.getText().toString(), password.getText().toString(), RESULT_OK);
                 }
             }
         });

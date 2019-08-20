@@ -38,8 +38,6 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.email_address_value_sign_in);
         password = findViewById(R.id.password_input);
 
-        Intent intent = getIntent();
-        final Bundle bundle = intent.getBundleExtra("RegisteredData");
         email.setText("");
         password.setText("");
 
@@ -93,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
             String passwordGiveBack = bundle.getString("Password");
             listMember.add(emailGiveBack + passwordGiveBack);
 
-            if (resultCode == RESULT) {
+            if (resultCode == RESULT_OK) {
                 email.setText(emailGiveBack);
                 password.setText(passwordGiveBack);
             }
