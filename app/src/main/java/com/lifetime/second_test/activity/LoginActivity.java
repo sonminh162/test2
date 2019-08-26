@@ -63,13 +63,13 @@ public class LoginActivity extends AppCompatActivity {
                 boolean userValid;
                 String getEmailInput = email.getText().toString();
                 String getPasswordInput = password.getText().toString();
-//                userValid = searching(getEmailInput,getPasswordInput,userList);
-                User user6 = new User(getEmailInput,getPasswordInput);
-                userValid = userList.contains(user6);
+                userValid = searching(getEmailInput,getPasswordInput,userList);
+//                User user6 = new User(getEmailInput,getPasswordInput);
+//                userValid = userList.contains(user6);
 //                userValid = listMember.contains(getEmailInput + getPasswordInput);
 
                 if (userValid) {
-                    Intent intent = new Intent(LoginActivity.this, NewFeedActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, MainScreenActivity.class);
                     startActivity(intent);
                     finish();
                 } else {

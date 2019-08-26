@@ -11,24 +11,34 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.lifetime.second_test.R;
+import com.lifetime.second_test.SpecialInterface.ItemClickListener;
 import com.lifetime.second_test.model.Info;
 
 import java.util.ArrayList;
 
 public class NewFeedAdapter extends RecyclerView.Adapter<NewFeedAdapter.ViewHolder>{
 
+    public interface OnItemClickListener{
+        void onAvatarClick(Info info);
+    }
+
+    ItemClickListener itemClickListener;
+
     ArrayList<Info> infors;
+
+    private OnItemClickListener listener;
     Context context;
 
-    public NewFeedAdapter(ArrayList<Info> infors, Context context) {
+
+    public NewFeedAdapter(ArrayList<Info> infors,OnItemClickListener listener) {
         this.infors = infors;
-        this.context = context;
+        this.listener = listener;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.new_feed_item_row,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.itemrow_newfeed,parent,false);
         return new ViewHolder(view);
     }
 
@@ -42,7 +52,7 @@ public class NewFeedAdapter extends RecyclerView.Adapter<NewFeedAdapter.ViewHold
         return infors.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         ImageView avatar;
         TextView name;
         TextView time;
@@ -58,13 +68,24 @@ public class NewFeedAdapter extends RecyclerView.Adapter<NewFeedAdapter.ViewHold
             background = itemView.findViewById(R.id.item_view_img);
             price = itemView.findViewById(R.id.item_view_price);
         }
-        public void bindView(Info info){
+        public void bindView(final Info info){
             avatar.setImageResource(info.getAvatar());
             name.setText(info.getName());
             time.setText(info.getTime());
             content.setText(info.getContent());
             background.setImageResource(info.getBackground());
             price.setText(info.getPrice());
+            avatar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    listener.onAvatarClick(info);
+                }
+            });
+        }
+
+        @Override
+        public void onClick(View view) {
+            itemClickListener.onClick(view,getAdapterPosition(), listener);
         }
     }
 }

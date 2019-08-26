@@ -11,17 +11,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activity.LoginActivity"
+        <activity
+            android:name=".activity.LoginActivity"
             android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity android:name=".activity.MainScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.NewFeedActivity" />
-        <activity android:name=".activity.RegisterActivity"
-            android:windowSoftInputMode="adjustPan">
-        </activity>
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:windowSoftInputMode="adjustPan" />
     </application>
 
 </manifest>

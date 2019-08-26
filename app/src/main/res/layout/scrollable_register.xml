@@ -4,6 +4,6 @@
     android:layout_height="match_parent">
 
     <include
-        layout="@layout/register"/>
+        layout="@layout/screen_register"/>
 
 </ScrollView>

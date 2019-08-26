@@ -38,4 +38,14 @@ Welcome back.</string>
     <string name="enter_email_2">enter email</string>
     <string name="enter_name_3">enter name</string>
     <string name="enter_email_3">enter email</string>
+    <string name="anything_7">anything_7</string>
+
+    <string-array name="numbers">
+        <item>All Categories</item>
+        <item>Yellow Wine</item>
+        <item>Purple Wine</item>
+        <item>Pink Wine</item>
+        <item>Five</item>
+    </string-array>
+
 </resources>
